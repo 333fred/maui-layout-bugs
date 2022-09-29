@@ -19,4 +19,6 @@ public class MainPageViewModel
 public class CardViewModelCollection
 {
     public List<CardViewModel> Cards { get; } = Enumerable.Range(1, 6).Select(i => new CardViewModel(i)).ToList();
+    // Comment the above and uncomment this to null ref the xaml compiler
+    //public CardViewModel[] Cards { get; } = Enumerable.Range(1, 6).Select(i => new CardViewModel(i)).ToArray();
 }
