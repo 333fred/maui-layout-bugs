@@ -4,42 +4,9 @@
              xmlns:test="clr-namespace:Test"
              x:Class="Test.MainPage"
              x:DataType="test:MainPageViewModel">
-    <Frame x:Name="RootFrame">
-        <CollectionView 
-            ItemsSource="{Binding Matches}">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="test:CardViewModelCollection">
-                    <VerticalStackLayout VerticalOptions="StartAndExpand" Spacing="5">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width=".4*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width=".4*" />
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Grid.Row="0" Text="Pr - 1"/>
-
-
-                            <Label Grid.Column="1" Grid.Row="0" Text="Prestarted"  HorizontalTextAlignment="Center" />
-                            <Label Grid.Column="2" Grid.Row="0" Text="10:00 AM" HorizontalTextAlignment="End"/>
-                        </Grid>
-                        <Grid ColumnDefinitions=".5*, .5*" RowDefinitions="*, *, *">
-                            <test:Card Grid.Column="0" Grid.Row="0" BindingContext="{Binding Cards[0]}" />
-                            <test:Card Grid.Column="1" Grid.Row="0" BindingContext="{Binding Cards[1]}" />
-                            <test:Card Grid.Column="0" Grid.Row="1" BindingContext="{Binding Cards[2]}" />
-                            <test:Card Grid.Column="1" Grid.Row="1" BindingContext="{Binding Cards[3]}" />
-                            <test:Card Grid.Column="0" Grid.Row="2" BindingContext="{Binding Cards[4]}" />
-                            <test:Card Grid.Column="1" Grid.Row="2" BindingContext="{Binding Cards[5]}" />
-                        </Grid>
-                    </VerticalStackLayout>
-
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
-    </Frame>
+    <Grid>
+        <Grid.Resources>
+            <test:EnumValuesProvider x:Name="Provider" x:TypeArguments="test:E" />
+        </Grid.Resources>
+    </Grid>
 </ContentPage>
